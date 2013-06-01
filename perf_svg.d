@@ -69,7 +69,7 @@ void generateSVG()
 	scope(exit) f.close;
 
 	File f2 = File("perf.svg", "w");
-	f2.writeln("<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\">");
+	f2.writeln("<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" height=\"3000\">");
 	scope (exit) f2.write("</svg>");
 
 	f.readln; //skip the first line
@@ -97,7 +97,7 @@ void generateSVG()
 
 		writeRectangle(30, y, 3, width, 25, color, 255 - color, 0, f2);
 		writeText(35, y + 15, "monospace", 12, infos[i].funcName, f2);
-		writeText(width - 45, y + 15, "monospace", 12, infos[i].percent, f2);
+		writeText(width - 15, y + 15, "monospace", 12, infos[i].percent, f2);
 
 	}
 }
