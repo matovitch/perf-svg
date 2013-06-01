@@ -109,7 +109,7 @@ int main(string args[])
 		perf report | cat | grep "~baseName(args[1])~" > perf.txt");
 	wait(pid);
 	generateSVG();
-	pid = spawnShell("eog --fullscreen perf.svg &");
+	pid = spawnShell("firefox perf.svg &");
 	wait(pid);
 	return 0;
 }
