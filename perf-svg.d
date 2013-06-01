@@ -96,8 +96,8 @@ void generateSVG()
 			infos[i].funcName = infos[i].funcName[0..150]~"...";
 
 		writeRectangle(30, y, 3, width, 25, color, 255 - color, 0, f2);
-		writeText(30, y + 15, "monospace", 12, infos[i].funcName, f2);
-		writeText(width - 50, y + 15, "monospace", 12, infos[i].percent, f2);
+		writeText(35, y + 15, "monospace", 12, infos[i].funcName, f2);
+		writeText(width - 45, y + 15, "monospace", 12, infos[i].percent, f2);
 
 	}
 }
