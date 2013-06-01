@@ -63,7 +63,7 @@ void writeText(
 		"\" >" ~ text ~ "</text>");
 }
 
-void genSVG()
+void generateSVG()
 {
 	File f = File("perf.txt", "r");
 	scope(exit) f.close;
@@ -108,7 +108,7 @@ int main(string args[])
 	auto pid = spawnShell("perf record "~getCommand(args)~" > /dev/null 2>&1 &&
 		perf report | cat | grep "~baseName(args[1])~" > perf.txt");
 	wait(pid);
-	genSVG();
+	generateSVG();
 	pid = spawnShell("eog --fullscreen perf.svg &");
 	wait(pid);
 	return 0;
