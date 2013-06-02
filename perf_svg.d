@@ -88,16 +88,16 @@ void generateSVG()
 	for(ulong i = 0; i < infos.length; i++)
 	{
 		ulong color = cast(ulong)(pow(to!float(infos[i].percent[0..$-1])/100, 0.2) * 255);
-		ulong y = (i + 1) * 30;
+		ulong y = (i + 1) * 28;
 
 		infos[i].funcName = infos[i].funcName.replace("<", "!(").replace(">", ")");
 		infos[i].funcName = infos[i].funcName[3..$].replace("&", " ref");
 		if (infos[i].funcName.length > 150)
 			infos[i].funcName = infos[i].funcName[0..150]~"...";
 
-		writeRectangle(30, y, 3, width, 25, color, 255 - color, 0, f2);
-		writeText(35, y + 15, "monospace", 12, infos[i].funcName, f2);
-		writeText(width - 15, y + 15, "monospace", 12, infos[i].percent, f2);
+		writeRectangle(30, y, 3, width, 24, color, 255 - color, 0, f2);
+		writeText(35, y + 17, "Liberation Mono", 14, infos[i].funcName, f2);
+		writeText(width - 25, y + 17, "Liberation Mono", 14, infos[i].percent, f2);
 
 	}
 }
